@@ -43,7 +43,6 @@ const disconnectSocket = () => {
 // Debug: Log eventos de conexión (opcional)
 socket
     .on("connect", () => console.debug("Socket conectado:", socket.id))
-    .on("disconnect", (reason) => console.debug("Socket desconectado:", reason))
-    .on("error", (error) => console.error("Socket error:", error));
+    .on("disconnect", (reason) => console.debug("Socket desconectado:", reason));
 
 export { socket, connectSocket, disconnectSocket };
