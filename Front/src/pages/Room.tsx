@@ -9,7 +9,7 @@ import { Toast } from "primereact/toast";
 import { ScrollPanel } from "primereact/scrollpanel";
 import { Badge } from "primereact/badge";
 import { socket } from "../services/api";
-import type { Message, Room as RoomType, User } from "../types/chat";
+import type { Message, Room as RoomType } from "../types/chat";
 
 export const Room = () => {
   const { pin } = useParams<{ pin: string }>();

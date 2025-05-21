@@ -8,7 +8,7 @@ import { Toast } from "primereact/toast";
 import { useRef } from "react";
 
 export const Home = () => {
-  const { createRoom, setCurrentRoom, currentRoom, joinRoom, isConnected } =
+  const { createRoom, joinRoom, isConnected } =
     useSocketContext();
   const navigate = useNavigate();
   const toast = useRef<Toast>(null);
