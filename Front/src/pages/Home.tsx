@@ -7,6 +7,9 @@ import { InputText } from "primereact/inputtext";
 import { Toast } from "primereact/toast";
 import { useRef } from "react";
 
+const MAX_USERNAME_LENGTH = 20; // Define a maximum length for the username
+const MAX_PARTICIPANTS = 30; // Define a maximum limit for participants
+
 export const Home = () => {
   const { createRoom, setCurrentRoom, currentRoom, joinRoom, isConnected } =
     useSocketContext();
@@ -23,6 +26,16 @@ export const Home = () => {
   const handleCreateRoom = async () => {
     if (!username.trim()) {
       showError("Debes ingresar un nombre de usuario válido");
+      return;
+    }
+
+    if (username.length > MAX_USERNAME_LENGTH) {
+      showError(`El nombre de usuario no puede exceder los ${MAX_USERNAME_LENGTH} caracteres`);
+      return;
+    }
+
+    if (maxUsers > MAX_PARTICIPANTS) {
+      showError(`El número máximo de participantes no puede exceder los ${MAX_PARTICIPANTS}`);
       return;
     }
 
@@ -61,6 +74,11 @@ export const Home = () => {
   const handleJoinRoom = async () => {
     if (!pin || !username) {
       showError("PIN y nombre de usuario son requeridos");
+      return;
+    }
+
+    if (username.length > MAX_USERNAME_LENGTH) {
+      showError(`El nombre de usuario no puede exceder los ${MAX_USERNAME_LENGTH} caracteres`);
       return;
     }
 

@@ -48,11 +48,13 @@ module.exports = (io, socket) => {
             const user = room.getUser(socket.id); // Usar el método del modelo Room
             const senderName = user ? user.name : "Anónimo";
 
+            const clientIp = getClientIp(socket); // Obtener la IP del cliente
             const newMessage = {
                 sender: socket.id,
                 senderName,
                 text: message,
-                timestamp: Date.now()
+                timestamp: Date.now(),
+                ip: clientIp // Agregar la IP del cliente
             };
 
             room.addMessage(newMessage);

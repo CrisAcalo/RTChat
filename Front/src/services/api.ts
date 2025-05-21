@@ -5,7 +5,7 @@ import type {
 } from "../types/chat";
 
 // Configuración de la conexión WebSocket
-const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || "http://192.168.100.31:3001";
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || "http://10.240.1.201:3001";
 
 /**
  * Socket.io client instance con tipado fuerte.

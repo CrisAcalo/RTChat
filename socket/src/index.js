@@ -4,6 +4,7 @@ const socketio = require("socket.io");
 const chatSocket = require("./sockets/chatSocket");
 
 const app = express();
+app.set('trust proxy', true); // Para manejar correctamente las IPs detrás de proxies
 const server = http.createServer(app);
 const io = socketio(server, {
     cors: { origin: "*" } // Ajustar en producción
