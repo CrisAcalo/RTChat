@@ -12,7 +12,8 @@ module.exports = {
         ERROR: {
             ROOM_FULL: "La sala está llena",
             ROOM_NOT_FOUND: "Sala no encontrada",
-            USER_ALREADY_IN_ROOM: "Ya estás en una sala. Deja la actual antes de unirte a otra."
+            USER_ALREADY_IN_ROOM: "Ya estás en una sala. Deja la actual antes de unirte a otra.",
+            IP_ALREADY_IN_ROOM: "Esta dirección IP ya está conectada a la sala."
         },
         SUCCESS: {
             ROOM_CREATED: "Sala creada exitosamente"

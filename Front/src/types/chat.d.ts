@@ -12,6 +12,7 @@ export interface User {
   id: string;          // ID único (socket.id)
   name: string;        // Nombre mostrado en el chat
   avatar?: string;     // URL de imagen (opcional)
+  ip? : string;        // IP del usuario (opcional)
 }
 
 /** Mensaje enviado en una sala */

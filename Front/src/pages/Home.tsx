@@ -67,11 +67,15 @@ export const Home = () => {
     setIsJoining(true);
     try {
       const response = await joinRoom(pin, username);
-      if (response.success) {
+      if (response.success && response.room) { // Asegúrate de que response.room exista
         navigate(`/room/${pin}`);
+      } else {
+        // Esta parte ya debería manejar el error del backend
+        showError(response.error || "Error desconocido al unirse a la sala");
       }
     } catch (error: any) {
-      showError(error.message);
+      // Este catch es más para errores de red o excepciones no controladas
+      showError(error.message || "Ocurrió un error inesperado");
     } finally {
       setIsJoining(false);
     }
